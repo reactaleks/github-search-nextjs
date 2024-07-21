@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Github User Searc App - Front End Mentor",
@@ -12,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-cream dark:bg-darkModeBlack" ><Providers>{children}</Providers>  </body>
     </html>
   );
 }
