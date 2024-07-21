@@ -1,68 +1,72 @@
-
 // Things needed from github api
 // Login / Avatar/ Name / Created_at / Bio / Public_repos / Followers / Following / Location / Blog / Twitter_username / Company
 import Image from "next/image";
-export default function OutputComponent(props:any) {
+import TwitterIconComponent from "@/public/assets/icon-twitter";
+import WebsiteIconComponent from "@/public/assets/icon-website";
+import LocationIconComponent from "@/public/assets/icon-location";
+import CompanyIconComponent from "@/public/assets/icon-company";
 
-        console.log(props.userData);
+export default function OutputComponent(props: any) {
+  return (
+    <div className="w-[327px] h-[517px] rounded-xl shadow-xl bg-white mx-auto grid grid-rows-24 grid-cols-24 dark:bg-darkblue">
+      <img
+        src={props.userData.avatar_url}
+        width={75}
+        height={75}
+        alt=""
+        className="row-span-6 col-span-6 col-start-2 row-start-2 rounded-full"
+      />
+      <div className="row-span-1 col-span-10 col-start-8 row-start-2">
+        {props.userData.name}
+      </div>
+      <div className="row-span-1 col-span-10 col-start-8 row-start-3">
+        <a className="text-blue"> @{props.userData.login}</a>
+      </div>
+      <div className="row-span-1 col-span-12 col-start-8 row-start-4">
+        {props.userData.created_at}
+      </div>
+      <p className="row-span-4 col-span-20 col-start-3 row-start-6">
+        {/* {props.userData.bio} */}
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+        Quisque volutpat mattis eros.
+      </p>
 
-        return (
-            <div className="w-[327px] h-[517px] border flex flex-col justify-around">
-              <div className="flex">
-                <div>
-                  <div className="w-[75px] h-[75px] border rounded-full">
-                    <img src={props.userData.avatar_url} width={75} height={75} alt=""/>
+      <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-black rounded-xl">
+        <div>
+          <div>Repos</div>
+          <div>{props.userData.public_repos}</div>
+        </div>
+        <div>
+          <div>Followes</div>
+          <div>{props.userData.followers}</div>
+        </div>
+        <div>
+          <div>Following</div>
+          <div>{props.userData.following}</div>
+        </div>
+      </div>
 
-                  </div>
-                </div>
-                <div>
-                  <p>{props.userData.name}</p>
-                  <p>{props.userData.login}</p>
-                  <p>{props.userData.created_at}</p>
-                </div>
-              </div>
-              <div className="w-[279px] h-[75px]">
-                <p>
-                  {props.userData.bio}
-                </p>
-              </div>
-        
-              <div className="w-[279px] h-[85px] flex">
-                <div>
-                  <div>Repos</div>
-                  <div>{props.userData.public_repos}</div>
-                </div>
-                <div>
-                  <div>Followes</div>
-                  <div>{props.userData.followers}</div>
-                </div>
-                <div>
-                  <div>Following</div>
-                  <div>{props.userData.following}</div>
-                </div>
-              </div>
-        
-              <div className="flex flex-col">
-                <div className="flex">
-                  <div>Icon</div>
-                  <div>{props.userData.location}</div>
-                </div>
-                <div className="flex">
-                  <div>Icon</div>
-                  <div>{props.userData.blog}</div>
-                </div>
-                <div className="flex">
-                  <div>Icon</div>
-                  <div>{props.userData.twitter_username}</div>
-                </div>
-                <div className="flex">
-                  <div>Icon</div>
-                  <div>{props.userData.company}</div>
-                </div>
-              </div>
-            </div>
-          );
+      <div className="flex flex-col justify-center content-center col-span-12 row-span-8 row-start-16 col-start-2 gap-2">
+        <div className="flex justify-between items-center ">
+          <LocationIconComponent className="fill-black dark:fill-white" />
 
+          {props.userData.location}
+        </div>
+        <div className="flex justify-between items-center">
+          <WebsiteIconComponent className="fill-black dark:fill-white" />
+          {props.userData.blog}
+        </div>
+        <div className="flex justify-between items-center">
+          <TwitterIconComponent className="fill-black dark:fill-white" />
 
- 
+          {props.userData.twitter_username}
+        </div>
+        <div className="flex justify-between items-center">
+          <CompanyIconComponent className="fill-black dark:fill-white" />
+
+          {props.userData.company}
+        </div>
+      </div>
+    </div>
+  );
 }

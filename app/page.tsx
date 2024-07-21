@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <NavComponent/>
-      <main className=" min-h-screen bg-white dark:bg-black">
+      <main className=" min-h-screen bg-cream dark:bg-black">
         <SearchComponent />
       </main>
     </>
