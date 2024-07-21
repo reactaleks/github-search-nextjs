@@ -16,7 +16,7 @@ export default function OutputComponent(props: any) {
         alt=""
         className="row-span-6 col-span-6 col-start-2 row-start-2 rounded-full"
       />
-      <div className="row-span-1 col-span-10 col-start-8 row-start-2 font-spacebold font-bold text-[16px] text-black">
+      <div className="row-span-1 col-span-10 col-start-8 row-start-2 font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
         {props.userData.name}
       </div>
       <div className="row-span-1 col-span-10 col-start-8 row-start-3 font-space text-[13px]">
@@ -24,48 +24,48 @@ export default function OutputComponent(props: any) {
           @{props.userData.login}
         </a>
       </div>
-      <div className="row-span-1 col-span-12 col-start-8 row-start-4 font-space text-[13px] text-lightblue">
+      <div className="row-span-1 col-span-12 col-start-8 row-start-4 font-space text-[13px] text-lightblue dark:text-darkModeWhite">
         {props.userData.created_at}
       </div>
-      <p className="row-span-4 col-span-20 col-start-3 row-start-6 font-space text-[13px] leading-[25px] text-lightblue">
+      <p className="row-span-4 col-span-20 col-start-3 row-start-6 font-space text-[13px] leading-[25px] text-lightblue dark:text-darkModeWhite">
         {props.userData.bio}
       </p>
 
       <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-darkModeBlack rounded-xl">
         <div className="text-center">
-          <div className="font-space text-[11px] text-lightblue">Repos</div>
-          <div className="font-spacebold font-bold text-[16px] text-black">
+          <div className="font-space text-[11px] text-lightblue dark:text-darkModeWhite">Repos</div>
+          <div className="font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
             {props.userData.public_repos}
           </div>
         </div>
         <div className="text-center">
-          <div className="font-space text-[11px] text-lightblue">Followes</div>
-          <div className="font-spacebold font-bold text-[16px] text-black">
+          <div className="font-space text-[11px] text-lightblue dark:text-darkModeWhite">Followes</div>
+          <div className="font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
             {props.userData.followers}
           </div>
         </div>
         <div className="text-center">
-          <div className="font-space text-[11px] text-lightblue">Following</div>
-          <div className="font-spacebold font-bold text-[16px] text-black">
+          <div className="font-space text-[11px] text-lightblue dark:text-darkModeWhite">Following</div>
+          <div className="font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
             {props.userData.following}
           </div>
         </div>
       </div>
 
       <LocationIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-16 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-16 col-start-4">
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-16 col-start-4 dark:text-darkModeWhite">
         {props.userData.location}
       </div>
       <WebsiteIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-18 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-18 col-start-4">
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-18 col-start-4 dark:text-darkModeWhite">
         {props.userData.blog}
       </div>
       <TwitterIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-20 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-20 col-start-4">
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-20 col-start-4 dark:text-darkModeWhite">
         {props.userData.twitter_username}
       </div>
       <CompanyIconComponent className="fill-darkblue dark:fill-white w-[20px] h-[20px] row-span-1 col-span-2 row-start-22 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-22 col-start-4">
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-22 col-start-4 dark:text-darkModeWhite">
         {props.userData.company}
       </div>
     </div>

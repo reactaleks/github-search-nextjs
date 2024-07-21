@@ -14,10 +14,10 @@ export default function SearchComponent() {
     return (
         <div>
             <form action={formAction} className="my-10">
-                <div className="relative w-[327px] h-[60px] shadow-md rounded-xl mx-auto">
+                <div className="relative w-[327px] h-[60px] shadow-md rounded-xl mx-auto group">
                     <input type="text" placeholder="Search Github username..." name="userName" className="w-full h-full  rounded-xl pl-10 pr-15 py-5 font-space text-[13px] leading-[25px] text-darkblue dark:bg-darkModeBlue dark:text-darkModeWhite" />
-                    <Image src={'/assets/icon-search.svg'} width={24} height={25} alt="" className="absolute top-0 bottom-0 my-auto ml-2"/>
-                    <button type="submit" className="w-[84px] h-[46px] bg-blue rounded-xl text-white absolute right-0 top-0 bottom-0 my-auto mr-2">Search</button>                
+                    <Image src={'/assets/icon-search.svg'} width={20.05} height={20} alt="" className="absolute top-0 bottom-0 my-auto ml-2"/>
+                    <button type="submit" className="w-[84px] h-[46px] bg-blue group-focus-within:brightness-125 hover:brightness-125 gr rounded-xl cursor-pointer text-white absolute right-0 top-0 bottom-0 my-auto mr-2">Search</button>                
                 </div>
             </form> 
 
