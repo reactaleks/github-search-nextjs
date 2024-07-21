@@ -22,6 +22,7 @@ const config: Config = {
       darkModeWhite: '#FFFFFF',
       darkModeBlack: '#141D2F',
       darkModeBlue: '#1E2A47',
+      error: '#F74646'
     },
     extend: {
       gridTemplateColumns: {
@@ -44,7 +45,7 @@ const config: Config = {
         'span-23': 'span 23 / span 23',
         'span-24': 'span 24 / span 24'
       },
-      gridColStart: {
+      gridColumnStart: {
         '13': '13',
         '14': '14',
         '15': '15',

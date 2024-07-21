@@ -9,12 +9,12 @@ export async function getData(prevState: any, formData: FormData) {
    try {
     const response = await fetch(url)
     if(!response.ok) {
+        return {userData: {}, erroMsg: 'No results'}
         throw new Error(`Response status: ${response.status}`)
     }
     return {userData: await response.json()};  
 
    } catch (err:any) {
-
     console.error(err.message);
    }
 

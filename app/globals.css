@@ -6,10 +6,10 @@
 @layer base {
     @font-face {
         font-family: 'Space Regular';
-        src: url('/public/fonts/SpaceMono-Regular.ttf');
+        src: url('/fonts/SpaceMono-Regular.ttf');
     }
     @font-face {
         font-family: 'Space Bold';
-        src: url('/public/fonts/SpaceMono-Bold.ttf');
+        src: url('/fonts/SpaceMono-Bold.ttf');
     }
 }
