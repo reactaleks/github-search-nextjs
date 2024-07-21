@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    @font-face {
+        font-family: 'Space Regular';
+        src: url('/public/fonts/SpaceMono-Regular.ttf');
+    }
+    @font-face {
+        font-family: 'Space Bold';
+        src: url('/public/fonts/SpaceMono-Bold.ttf');
+    }
+}
