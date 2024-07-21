@@ -16,56 +16,57 @@ export default function OutputComponent(props: any) {
         alt=""
         className="row-span-6 col-span-6 col-start-2 row-start-2 rounded-full"
       />
-      <div className="row-span-1 col-span-10 col-start-8 row-start-2">
+      <div className="row-span-1 col-span-10 col-start-8 row-start-2 font-spacebold font-bold text-[16px] text-black">
         {props.userData.name}
       </div>
-      <div className="row-span-1 col-span-10 col-start-8 row-start-3">
-        <a className="text-blue"> @{props.userData.login}</a>
+      <div className="row-span-1 col-span-10 col-start-8 row-start-3 font-space text-[13px]">
+        <a className="text-blue font-space text-[13px]">
+          @{props.userData.login}
+        </a>
       </div>
-      <div className="row-span-1 col-span-12 col-start-8 row-start-4">
+      <div className="row-span-1 col-span-12 col-start-8 row-start-4 font-space text-[13px] text-lightblue">
         {props.userData.created_at}
       </div>
-      <p className="row-span-4 col-span-20 col-start-3 row-start-6">
-        {/* {props.userData.bio} */}
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-        Quisque volutpat mattis eros.
+      <p className="row-span-4 col-span-20 col-start-3 row-start-6 font-space text-[13px] leading-[25px] text-lightblue">
+        {props.userData.bio}
       </p>
 
       <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-darkModeBlack rounded-xl">
-        <div>
-          <div>Repos</div>
-          <div>{props.userData.public_repos}</div>
+        <div className="text-center">
+          <div className="font-space text-[11px] text-lightblue">Repos</div>
+          <div className="font-spacebold font-bold text-[16px] text-black">
+            {props.userData.public_repos}
+          </div>
         </div>
-        <div>
-          <div>Followes</div>
-          <div>{props.userData.followers}</div>
+        <div className="text-center">
+          <div className="font-space text-[11px] text-lightblue">Followes</div>
+          <div className="font-spacebold font-bold text-[16px] text-black">
+            {props.userData.followers}
+          </div>
         </div>
-        <div>
-          <div>Following</div>
-          <div>{props.userData.following}</div>
+        <div className="text-center">
+          <div className="font-space text-[11px] text-lightblue">Following</div>
+          <div className="font-spacebold font-bold text-[16px] text-black">
+            {props.userData.following}
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col justify-center content-center col-span-12 row-span-8 row-start-16 col-start-2 gap-2">
-        <div className="flex justify-start items-center ">
-          <LocationIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
-
-          {props.userData.location}
-        </div>
-        <div className="flex justify-start items-center">
-          <WebsiteIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
-          {props.userData.blog}
-        </div>
-        <div className="flex justify-start items-center">
-          <TwitterIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
-
-          {props.userData.twitter_username}
-        </div>
-        <div className="flex justify-start items-center">
-          <CompanyIconComponent className="fill-black dark:fill-white w-[20px] h-[20px]" />
-
-          {props.userData.company}
-        </div>
+      <LocationIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-16 col-start-2" />
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-16 col-start-4">
+        {props.userData.location}
+      </div>
+      <WebsiteIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-18 col-start-2" />
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-18 col-start-4">
+        {props.userData.blog}
+      </div>
+      <TwitterIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-20 col-start-2" />
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-20 col-start-4">
+        {props.userData.twitter_username}
+      </div>
+      <CompanyIconComponent className="fill-darkblue dark:fill-white w-[20px] h-[20px] row-span-1 col-span-2 row-start-22 col-start-2" />
+      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-22 col-start-4">
+        {props.userData.company}
       </div>
     </div>
   );
