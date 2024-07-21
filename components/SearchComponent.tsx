@@ -4,17 +4,13 @@ import { getData } from "./actions/ServerActionsComponent"
 import { useFormState } from "react-dom"
 import OutputComponent from "./OutputComponent"
 
-// Things needed from github api
-// Login / Avatar/ Name / Created_at / Bio / Public_repos / Followers / Following / Location / Blog / Twitter_username / Company
-
 const initialState = {
     userData: {},
 }
 
 export default function SearchComponent() {
     const [state, formAction] = useFormState(getData, initialState)
-
-    console.log(state?.userData);
+    
     return (
         <>
             <form action={formAction}>
@@ -26,7 +22,7 @@ export default function SearchComponent() {
                 <button type="submit">Search</button>
             </form> 
 
-            <OutputComponent/>
+            <OutputComponent userData={state?.userData}/>
         </>
     )
 }
