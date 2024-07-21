@@ -8,7 +8,7 @@ import CompanyIconComponent from "@/public/assets/icon-company";
 
 export default function OutputComponent(props: any) {
   return (
-    <div className="w-[327px] h-[517px] rounded-xl shadow-xl bg-white mx-auto grid grid-rows-24 grid-cols-24 dark:bg-darkblue">
+    <div className="w-[327px] h-[517px] rounded-xl shadow-xl bg-white mx-auto grid grid-rows-24 grid-cols-24 dark:bg-darkModeBlue">
       <img
         src={props.userData.avatar_url}
         width={75}
@@ -31,7 +31,7 @@ export default function OutputComponent(props: any) {
         Quisque volutpat mattis eros.
       </p>
 
-      <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-black rounded-xl">
+      <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-darkModeBlack rounded-xl">
         <div>
           <div>Repos</div>
           <div>{props.userData.public_repos}</div>
@@ -47,22 +47,22 @@ export default function OutputComponent(props: any) {
       </div>
 
       <div className="flex flex-col justify-center content-center col-span-12 row-span-8 row-start-16 col-start-2 gap-2">
-        <div className="flex justify-between items-center ">
-          <LocationIconComponent className="fill-black dark:fill-white" />
+        <div className="flex justify-start items-center ">
+          <LocationIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
 
           {props.userData.location}
         </div>
-        <div className="flex justify-between items-center">
-          <WebsiteIconComponent className="fill-black dark:fill-white" />
+        <div className="flex justify-start items-center">
+          <WebsiteIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
           {props.userData.blog}
         </div>
-        <div className="flex justify-between items-center">
-          <TwitterIconComponent className="fill-black dark:fill-white" />
+        <div className="flex justify-start items-center">
+          <TwitterIconComponent className="fill-black dark:fill-white  w-[20px] h-[20px]" />
 
           {props.userData.twitter_username}
         </div>
-        <div className="flex justify-between items-center">
-          <CompanyIconComponent className="fill-black dark:fill-white" />
+        <div className="flex justify-start items-center">
+          <CompanyIconComponent className="fill-black dark:fill-white w-[20px] h-[20px]" />
 
           {props.userData.company}
         </div>
