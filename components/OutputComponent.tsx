@@ -7,6 +7,8 @@ import LocationIconComponent from "@/public/assets/icon-location";
 import CompanyIconComponent from "@/public/assets/icon-company";
 
 export default function OutputComponent(props: any) {
+
+  
   return (
     <div className="w-[327px] h-[517px] rounded-xl shadow-xl bg-white mx-auto grid grid-rows-24 grid-cols-24 dark:bg-darkModeBlue">
       <img
@@ -17,7 +19,7 @@ export default function OutputComponent(props: any) {
         className="row-span-6 col-span-6 col-start-2 row-start-2 rounded-full"
       />
       <div className="row-span-1 col-span-10 col-start-8 row-start-2 font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
-        {props.userData.name}
+        {!props.userData.name ? 'Mystery' : props.userData.name}
       </div>
       <div className="row-span-1 col-span-10 col-start-8 row-start-3 font-space text-[13px]">
         <a className="text-blue font-space text-[13px]">
@@ -27,8 +29,9 @@ export default function OutputComponent(props: any) {
       <div className="row-span-1 col-span-12 col-start-8 row-start-4 font-space text-[13px] text-lightblue dark:text-darkModeWhite">
         {props.userData.created_at}
       </div>
-      <p className="row-span-4 col-span-20 col-start-3 row-start-6 font-space text-[13px] leading-[25px] text-lightblue dark:text-darkModeWhite">
-        {props.userData.bio}
+      <p className={`row-span-4 col-span-20 col-start-3 row-start-6 font-space text-[13px] leading-[25px] ${!props.userData.bio ? 'text-[#A4B4CC] dark:text-[#A4B4CC]' : 'text-lightblue dark:text-darkModeWhite'} `}>
+        {!props.userData.bio ? 'I am a misterious github user who has nothing in my bio' : props.userData.bio}
+
       </p>
 
       <div className="flex justify-around items-center col-span-22 row-span-4 row-start-11 col-start-2 bg-cream dark:bg-darkModeBlack rounded-xl">
@@ -39,7 +42,7 @@ export default function OutputComponent(props: any) {
           </div>
         </div>
         <div className="text-center">
-          <div className="font-space text-[11px] text-lightblue dark:text-darkModeWhite">Followes</div>
+          <div className="font-space text-[11px] text-lightblue dark:text-darkModeWhite">Followers</div>
           <div className="font-spacebold font-bold text-[16px] text-black dark:text-darkModeWhite">
             {props.userData.followers}
           </div>
@@ -52,21 +55,21 @@ export default function OutputComponent(props: any) {
         </div>
       </div>
 
-      <LocationIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-16 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-16 col-start-4 dark:text-darkModeWhite">
-        {props.userData.location}
+      <LocationIconComponent className={`${!props.userData.location ? 'fill-[#A4B4CC] dark:fill-[#A4B4CC]' : 'fill-darkblue'} dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-16 col-start-2`} />
+      <div className={`font-space text-[13px] ${!props.userData.location ? 'text-[#A4B4CC] dark:text-[#A4B4CC]' : 'text-darkblue'}  row-span-1 col-span-18 row-start-16 col-start-4 dark:text-darkModeWhite`}>
+        {!props.userData.location ? 'Not available' : props.userData.location}
       </div>
-      <WebsiteIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-18 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-18 col-start-4 dark:text-darkModeWhite">
-        {props.userData.blog}
+      <WebsiteIconComponent className={`${!props.userData.blog ? 'fill-[#A4B4CC] dark:fill-[#A4B4CC]'  : 'fill-darkblue'} dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-18 col-start-2`} />
+      <div className={`font-space text-[13px] ${!props.userData.blog ? 'text-[#A4B4CC] dark:text-[#A4B4CC]' : 'text-darkblue'}  row-span-1 col-span-18 row-start-18 col-start-4 dark:text-darkModeWhite`}>
+        {!props.userData.blog ? 'Not available' : props.userData.blog}
       </div>
-      <TwitterIconComponent className="fill-darkblue dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-20 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-20 col-start-4 dark:text-darkModeWhite">
-        {props.userData.twitter_username}
+      <TwitterIconComponent className={`${!props.userData.twitter_username ? 'fill-[#A4B4CC] dark:fill-[#A4B4CC]' : 'fill-darkblue'} dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-20 col-start-2`} />
+      <div className={`font-space text-[13px] ${!props.userData.twitter_username ? 'text-[#A4B4CC] dark:text-[#A4B4CC]' : 'text-darkblue'}  row-span-1 col-span-18 row-start-20 col-start-4 dark:text-darkModeWhite`}>
+        {!props.userData.twitter_username ? 'Not available' : props.userData.twitter_username}
       </div>
-      <CompanyIconComponent className="fill-darkblue dark:fill-white w-[20px] h-[20px] row-span-1 col-span-2 row-start-22 col-start-2" />
-      <div className="font-space text-[13px] text-darkblue row-span-1 col-span-18 row-start-22 col-start-4 dark:text-darkModeWhite">
-        {props.userData.company}
+      <CompanyIconComponent className={`${!props.userData.company ? 'fill-[#A4B4CC] dark:fill-[#A4B4CC]' : 'fill-darkblue'} dark:fill-white  w-[20px] h-[20px] row-span-1 col-span-2 row-start-22 col-start-2`} />
+      <div className={`font-space text-[13px] ${!props.userData.company ? 'text-[#A4B4CC] dark:text-[#A4B4CC]' : 'text-darkblue'}  row-span-1 col-span-18 row-start-22 col-start-4 dark:text-darkModeWhite`}>
+        {!props.userData.company ? 'Not available' : props.userData.company}
       </div>
     </div>
   );
