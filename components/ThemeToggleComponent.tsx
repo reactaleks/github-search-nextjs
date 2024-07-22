@@ -17,8 +17,6 @@ const ThemeToggleComponent = () => {
 	if (!mounted) {
 		return null;
 	}
-	console.log(systemTheme)
-
 
 	if(currentTheme == 'dark') {
 		return (
