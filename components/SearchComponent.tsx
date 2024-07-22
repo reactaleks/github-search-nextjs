@@ -17,8 +17,6 @@ const initialState = {
 export default function SearchComponent() {
     const [state, formAction] = useFormState(getData, initialState)
     
-    console.log(state?.erroMsg)
-
     return (
         <div>
             <form action={formAction} className="my-10 flex">
@@ -29,8 +27,8 @@ export default function SearchComponent() {
                     <button type="submit" className="absolute col-start-18 col-span-6 row-start-4 row-span-10 w-[84px] h-[46px] bg-blue group-focus-within:brightness-125 hover:brightness-125 rounded-xl cursor-pointer text-white ">Search</button>                
                 </div>
             </form> 
-
-            <OutputComponent userData={state?.userData}/>
+            {Object.keys(state?.userData).length > 0 ? <OutputComponent userData={state?.userData}/> : null}
+            
         </div>
     )
 }
