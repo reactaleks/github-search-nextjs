@@ -22,11 +22,11 @@ const ThemeToggleComponent = () => {
 
 	if(currentTheme == 'dark') {
 		return (
-			<button onClick={() => setTheme('light')} className="flex uppercase w-[78px] h-[20px] justify-between items-center font-spacebold font-bold text-darkModeWhite text-[13px] tracking-[2.5px]">Light <SunIconComponent className="fill-white"/></button>
+			<button onClick={() => setTheme('light')} className="flex uppercase w-[78px] h-[20px] justify-between items-center font-spacebold font-bold text-darkModeWhite text-[13px] tracking-[2.5px] group hover:text-[#90A4D4]">Light <SunIconComponent className="fill-white group-hover:fill-[#90A4D4]"/></button>
 		)
 	} else {
 		return (
-			<button onClick={() => setTheme('dark')} className="flex uppercase w-[78px] h-[20px] justify-between items-center font-spacebold font-bold text-darkblue text-[13px] tracking-[2.5px]">Dark <MoonIconComponent className="fill-darkblue"/></button>
+			<button onClick={() => setTheme('dark')} className="flex uppercase w-[78px] h-[20px] justify-between items-center font-spacebold font-bold text-darkblue text-[13px] tracking-[2.5px] group hover:text-darkModeBlack">Dark <MoonIconComponent className="fill-darkblue group-hover:fill-darkModeBlack"/></button>
 		)
 	}
 };
