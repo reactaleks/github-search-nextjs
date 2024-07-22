@@ -7,7 +7,8 @@ import { useState, useEffect } from "react";
 
 const ThemeToggleComponent = () => {
     const [mounted, setMounted] = useState(false);
-	const { theme, setTheme } = useTheme();
+	const {systemTheme, theme, setTheme } = useTheme();
+	const currentTheme = theme === 'system' ? systemTheme : theme
 
     useEffect(() => {
 		setMounted(true);
@@ -16,8 +17,10 @@ const ThemeToggleComponent = () => {
 	if (!mounted) {
 		return null;
 	}
+	console.log(systemTheme)
 
-	if(theme == 'dark') {
+
+	if(currentTheme == 'dark') {
 		return (
 			<button onClick={() => setTheme('light')} className="flex uppercase w-[78px] h-[20px] justify-between items-center font-spacebold font-bold text-darkModeWhite text-[13px] tracking-[2.5px]">Light <SunIconComponent className="fill-white"/></button>
 		)
